@@ -9,12 +9,12 @@ header {
 .container {
     display: flex;
     flex-direction: row;
+    justify-content: center;
 }
 
 .grid {
-    display: flex;
+    display: grid;
     background-color: aqua;
-    flex-direction: column;
     width: 600px;
     height: 600px;
     margin: 3vh 3vw;
@@ -30,12 +30,17 @@ header {
     flex: 1 0 auto;
 }
 
-.gridSquare:hover {
-    background-color: black;
+.inputs {
+    height:60px;
 }
 
 .options {
     width: 10vw;
     height: 70vh;
     margin: 3vh 3vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
 }
