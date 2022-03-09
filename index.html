@@ -4,12 +4,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>@import url('https://fonts.googleapis.com/css2?family=Orbitron&display=swap');</style>
     <title>GRIDDRAW</title>
     <script src="./script.js" defer></script>
     <link rel="stylesheet" href="./style.css">
 </head>
 <body>
-    <header><h1>GRIDDRAW</h1></header>
+    <header><h1 id = 'GRIDDRAW'>GRIDDRAW</h1><h1 class="blink">_</h1></header>
     <div class="container">
         <div class="options">
                 <div class="option-title">Grid Size</div>
@@ -19,6 +20,7 @@
                 
                 <div class="option-title">Pick a Color</div>
                 <input type="color" class="inputs" id="color-picker" value="#000000">
+                <input type="button" id="randomizer" value="Randomize">
 
                 <input type="button" class="inputs" id="clear-grid" value="Clear Grid">
                 

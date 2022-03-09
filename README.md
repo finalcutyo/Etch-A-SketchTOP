@@ -43,3 +43,16 @@ Sidenote: I tried changing the container to have a grid style layout rather than
 ##### TODO: 
 - Add some small style elements to make the GRIDDRAW app look a little better 
 - Think of some feature ideas to make the project a little more unique feeling
+
+## Third GIT push
+
+#### Summary
+I decided to kinda add a theme to the overall project. I wanted to go with an idea of a floating sheet above a lightbox. I may not be completely done with the project but I do like how it turned out so far. Beautified!
+
+1. Added some color and flair to the entire webpage.
+    - Drop shadows on the items that change color according to the chosen color
+    - Added a Google font
+    - Put a gradient on the background
+
+##### TODO:
+- Add some more flair and color options

@@ -1,29 +1,37 @@
-let newRow;
-let newCol;
-const grid = document.querySelector('.grid');
-const options = document.querySelector('.options');
-let GRID_SIZE = document.querySelector('#grid-size').value; 
+const GRID = document.querySelector('.grid');
+let grid_size = document.querySelector('#grid-size').value; 
 let color = document.querySelector('#color-picker').value;
 
+let newRow;
+let newCol;
 draw();
 
 document.querySelector('#color-picker').addEventListener('input', () => {
     color = document.querySelector('#color-picker').value;
+    document.documentElement.style.setProperty('--chosen-color', color);
 });
+document.querySelector('#randomizer').addEventListener('click', () => {
+    let randR = Math.floor(Math.random() * 255);
+    let randG = Math.floor(Math.random() * 255);
+    let randB = Math.floor(Math.random() * 255);
+    color = `rgb(${randR}, ${randG}, ${randB})`;
+    document.documentElement.style.setProperty('--chosen-color', color);
+})
+
 document.querySelector('#grid-size-confirm').addEventListener('click', () => {
-    GRID_SIZE = document.querySelector('#grid-size').value;
+    grid_size = document.querySelector('#grid-size').value;
     draw();
 });
 
 document.querySelector('#clear-grid').addEventListener('click', draw);
 
 function draw() {
-    grid.innerHTML = '';
-    for (let row = 0; row < GRID_SIZE - 1; row++) {
+    GRID.innerHTML = '';
+    for (let row = 0; row < grid_size - 1; row++) {
         newRow = document.createElement('div');
         newRow.className = 'gridRow';
-        grid.appendChild(newRow);
-        for (let col = 0; col < GRID_SIZE - 1; col++) {
+        GRID.appendChild(newRow);
+        for (let col = 0; col < grid_size - 1; col++) {
             newCol = document.createElement('div');
             newCol.className = 'gridSquare';
             newRow.appendChild(newCol);

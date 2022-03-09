@@ -1,9 +1,39 @@
+:root {
+    --chosen-color: #000000;
+    --background-variant: linear-gradient(90deg, rgb(208, 253, 244) 0%, rgba(255,255,255,1) 24%, rgb(206, 246, 255) 81%, rgba(234,251,255,1) 100%);
+    --default-color: black;
+}
+
 * {
-    background-color: rgb(206, 206, 206);
+    font-family: 'Orbitron', sans-serif;
 }
 
 header {
-    text-align: center;
+    display: flex;
+    flex-flow: row;
+    justify-content: center;
+}
+
+
+
+.blink {
+    animation: blink-animation 1s steps(5, start) infinite;
+    -webkit-animation: blink-animation 1s steps(5, start) infinite;
+}
+@keyframes blink-animation {
+    to {
+        visibility: hidden;
+    }
+}
+@-webkit-keyframes blink-animation {
+    to {
+      visibility: hidden;
+    }
+}
+
+
+body {
+    background: var(--background-variant);
 }
 
 .container {
@@ -12,17 +42,43 @@ header {
     justify-content: center;
 }
 
+#grid-size {
+    -webkit-appearance: none;
+    width: 8vw;
+    height: 10px;
+    background: rgba(133, 133, 133, 0.281);
+    outline: none;
+}
+
+#grid-size::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 1vw;
+    height: 20px;
+    background-color: var(--chosen-color);
+}
+
+#grid-size::-moz-range-thumb  {
+    width: 1vw;
+    height: 20px;
+    background-color: var(--chosen-color);
+}
+
+
 .grid {
     display: grid;
-    background-color: aqua;
+    background-color: rgba(255, 255, 255, 0.068);
     width: 600px;
     height: 600px;
     margin: 3vh 3vw;
+    box-shadow: 2px 8px 8px var(--chosen-color);
 }
 
 .gridSquare {
     border: 1px solid rgba(0, 0, 0, 0.267);
     flex: 1 0 auto; 
+    box-shadow: 2px 8px 8px rgba(0,0,0,0.19);
+    background-color: transparent;
 }
 
 .gridRow {
@@ -36,11 +92,16 @@ header {
 
 .options {
     width: 10vw;
-    height: 70vh;
+    min-width: 100px;
+    height: 600px;
     margin: 3vh 3vw;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     gap: 10px;
+    box-shadow: 4px 8px 8px var(--chosen-color);
+    background-color: transparent;
+    background-position: 0 0, 0 10px, 10px -10px, -10px 0px;
+    border: 2px dotted var(--chosen-color);
 }
